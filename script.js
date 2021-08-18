@@ -34,4 +34,13 @@ console.log(carName);
 console.log(typeof (carName));
 
 
+let isIsland = false;
+let language;
+console.log(isIsland)
+console.log(totalPopulation);
+console.log(countryName);
+language = "Hindi";
+console.log(language);
+
+
 
