@@ -2,7 +2,7 @@ let js = 'awesome';
 if (js === 'awesome') alert('Inside IF');
 
 console.log(40 + 60);
-
+// assignment values and variables
 let firstName = "Krishna";
 console.log(firstName);
 var lastName = "Ramchandani";
@@ -33,7 +33,7 @@ carName = 'Mercedes';
 console.log(carName);
 console.log(typeof (carName));
 
-
+//assignment data types
 let isIsland = false;
 let language;
 console.log(isIsland)
@@ -41,6 +41,13 @@ console.log(totalPopulation);
 console.log(countryName);
 language = "Hindi";
 console.log(language);
+
+//assignment let, const and var
+const nationalBird = "Peacock";
+console.log(nationalBird);
+language = "English";
+//var nationalBird = "Swan";
+
 
 
 
