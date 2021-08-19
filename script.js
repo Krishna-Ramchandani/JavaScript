@@ -16,7 +16,7 @@ console.log(continentName);
 let totalPopulation = 10000
 console.log(totalPopulation);
 
-let age = 18; let bill = 99.99; //number variables;
+let age = 18; //let bill = 99.99; //number variables;
 let subjectName = "JavaScript"; let subName = 'JavaScript'; //String variables
 let real = true; let unreal = false;//booleans variables;
 let carName, modelNumber;//undefined variables;
@@ -130,3 +130,83 @@ let numberTwo = numberOne;
 console.log(numberTwo);
 numberTwo = 20;
 console.log(numberTwo);
+
+//string 
+//const firstName = "Krishna", lastName = "Ramchandani";
+console.log("Hello, I'm", firstName, lastName, "I'm from", countryName);
+console.log("Hello, I'm " + firstName + ' ' + lastName + " I'm from " + countryName);
+//above both line has same output
+
+//string literal template
+const newNameVar = `Hello, I'm ${firstName} ${lastName}. I'm from ${countryName} `;
+console.log(newNameVar);
+
+//type conversion and coercion
+const inputYear = "2021";
+console.log(Number(inputYear) + 18);
+console.log('23' + '10' - 3 + ' Number ' + '23' * '2');
+console.log('23' > '2');
+
+//truthy and falsy
+const money = 0;
+if (money) {
+    console.log("Inside IF");
+}
+else {
+    console.log("Inside ELSE")
+}
+
+
+//switch case 
+const dayOfTheWeek = "Saturday";
+switch (dayOfTheWeek) {
+    case "Monday":
+        console.log("This is Monday.");
+        break;
+    case "Tuesday":
+        console.log("This is Tuesday");
+        break;
+    case "Wednesday":
+        console.log("This is Wednesday");
+        break;
+    case "Thursday":
+        console.log("This is Thursday");
+        break;
+    case "Friday":
+        console.log("This is Friday");
+        break;
+    case "Saturday":
+    case "Sunday":
+        console.log("Enjoy the Weekend!!");
+        break;
+    default:
+        console.log("Not a valid Day of the week");
+}
+
+//coding challenge #3
+/*There are two gymnastics teams, Dolphins and Koalas. They compete against each 
+other 3 times. The winner with the highest average score wins a trophy! */
+const dolphinAvg = (97 + 112 + 101) / 3, koalasAvg = (109 + 95 + 123) / 3;
+if (dolphinAvg >= 100 && dolphinAvg > koalasAvg) {
+    console.log("Dolphins Win the Game");
+}
+else if (koalasAvg >= 100 && koalasAvg > dolphinAvg) {
+    console.log("Koalas Win the Game");
+}
+else if (koalasAvg === dolphinAvg) {
+    console.log("Match Tied");
+}
+else {
+    console.log("No One Wins")
+}
+
+
+//coding challenge #4
+/*Steven wants to build a very simple tip calculator for whenever he goes eating in a
+restaurant. In his country, it's usual to tip 15% if the bill value is between 50 and
+300. If the value is different, the tip is 20%.*/
+const bill = 430;
+bill >= 50 && bill <= 300 ? console.log(`The bill was ${bill}, the tip was ${(15 * bill) / 100}, 
+and the total value is ${bill + ((15 * bill) / 100)} `) : console.log(`The bill was ${bill}, 
+the tip was ${(20 * bill) / 100}, and the total value is ${bill + ((20 * bill) / 100)} `);
+
