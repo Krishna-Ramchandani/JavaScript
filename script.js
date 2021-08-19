@@ -1,5 +1,6 @@
-let js = 'awesome';
-if (js === 'awesome') alert('Inside IF');
+
+//let js = 'awesome';
+//if (js === 'awesome') alert('Inside IF');
 
 console.log(40 + 60);
 // assignment values and variables
@@ -20,6 +21,7 @@ let subjectName = "JavaScript"; let subName = 'JavaScript'; //String variables
 let real = true; let unreal = false;//booleans variables;
 let carName, modelNumber;//undefined variables;
 let last = null;//null variable;
+console.log("Checking the type of Null:", typeof (last))
 
 console.log(real);
 console.log(typeof (carName));
@@ -46,8 +48,85 @@ console.log(language);
 const nationalBird = "Peacock";
 console.log(nationalBird);
 language = "English";
-//var nationalBird = "Swan";
+language = "Hindi"
 
 
+//ternary operator
+let num = 32;
+let evenOrOddNum = (num % 2 == 0) ? "Even Number" : "Odd Number";
+console.log(evenOrOddNum);
 
+//operators
+//math operators :  +,-,/,*,**
+//assignment operators: =, +=, -=, *=, /=
+//increment decrement:   ++,--
+//comparison: <, >, <=, >=
 
+//basic operators
+console.log(totalPopulation / 2);
+totalPopulation++;
+console.log(totalPopulation);
+console.log(totalPopulation > 6);
+console.log(totalPopulation < 33);
+const description1 =
+    countryName +
+    ' is in ' +
+    continentName +
+    ', and its ' +
+    totalPopulation +
+    ' million people speak ' +
+    language;
+console.log(description1);
+
+//average of birth years
+const birthYearJohn = 1999, birthYearSim = 2000, birthyearAndy = 2001, birthYearMartha = 1999;
+console.log("Average Birth Year of John, Sim, Andy, Martha is: ", (birthYearJohn + birthYearSim + birthyearAndy + birthYearMartha) / 4)
+
+//coding challenge #1 and #2 Mix
+
+console.log("coding challenge #1")
+let markWeight = 78, markHeight = 1.69, johnWeight = 92, johnHeight = 1.95;
+let bmiMark = markWeight / markHeight ** 2;
+let bmiJohn = johnWeight / johnHeight ** 2;
+console.log("Mark's MBI: " + bmiMark + ", John's BMI: " + bmiJohn);
+let markHigherBMI;
+if (bmiMark > bmiJohn) {
+    markHigherBMI = true;
+    console.log(markHigherBMI);
+    console.log("Mark's BMI is greater then John's BMI");
+}
+else {
+    markHigherBMI = false;
+    console.log(markHigherBMI);
+    console.log("John's BMI is greater then Mark's BMI");
+}
+
+//objects examples and referencing
+let humanMale = { eyes: "Two", hands: "Two" };
+let humanFemale = humanMale;
+console.log("Description of Male: Eyes: " + humanMale.eyes, "Hands: " + humanMale.hands,
+    " Description of Female: Eyes: " + humanFemale.eyes, "Hands: " + humanFemale.hands);
+humanFemale = { hairs: "long" };//creating new key for humanFemale object
+let alien = humanFemale;
+alien.hands = "Many"; //changing alien hands key also changing hands key in humanFemale but not in humanMale
+console.log("Female Hands: " + humanFemale.hands);
+console.log("Male Hands: " + humanMale.hands);
+// console.log("Male hairs:" + humanMale.hairs); //showing undefined when trying to add new key to female obj and trying to print to male object
+
+//nested objects 
+humanMale = {
+    face: {
+        nose: "One",
+        ears: "Two",
+        mouth: "One"
+    }
+}
+console.log("Human Facial Features: Nose: " + humanMale.face.nose, " Humans Ears: " + humanMale.face.ears,
+    "Human Mouth: " + humanMale.face.mouth);
+
+//simple referencing 
+let numberOne = 10;
+let numberTwo = numberOne;
+console.log(numberTwo);
+numberTwo = 20;
+console.log(numberTwo);
