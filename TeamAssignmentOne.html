@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Team Assignment 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/searchUser.js"></script>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        body {
+            position: relative;
+        }
+
+        #menu {
+            background-color: black;
+            min-height: 900px;
+            color: white;
+            position: static;
+            height: 1000px;
+        }
+
+        #content {
+            margin-top: 60px;
+            margin-left: 50px;
+        }
+
+        #main-section {
+            background: url("../images/exam.jpg") no-repeat;
+            min-height: 672px;
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.9);
+            min-height: 672px;
+            position: relative;
+            width: 100%;
+        }
+
+        .main-frame {
+            margin-top: 130px;
+            padding: 30px;
+        }
+
+        .login {
+            margin-top: 130px;
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 430px;
+            height: 470px;
+        }
+
+        * {
+            border-radius: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="menu" class="col-md-2" color="black">
+                <!--<center><h3>Admin Panel</h3></center>-->
+                <br><br><br>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a data-toggle="tab" data-target="#home">
+                            <i class="fa fa-home fa-fw" aria-hidden="true"></i>&emsp;Home</a></li><br>
+
+                    <li><a data-toggle="tab" data-target="#projects"><span
+                                class="glyphicon glyphicon-th-list"></span>&emsp;Projects</a></li><br>
+
+                    <li><a data-toggle="tab" data-target="#modules">
+                            <i class="fa fa-book fa-fw" aria-hidden="true"></i>&emsp;Modules</a></li><br>
+
+                    <li><a data-toggle="tab" data-target="#api">
+                            <span class="glyphicon glyphicon-cog"></span>&emsp;API</a></li><br>
+
+                    <li><a data-toggle="tab" data-target="#user">
+                            <i class='fas fa-chalkboard-teacher'>
+                            </i>&emsp;User</a></li><br>
+
+                    <li><a data-toggle="tab" data-target="#userAddress">
+                            <i class="fa fa-city"></i></span>&emsp;User Address
+                        </a></li><br>
+
+                </ul>
+            </div>
+            <div id="content" class="col-md-8">
+                <div class="tab-content">
+
+
+
+                    <div id="home" class="tab-pane in fade active">
+                        <h3>Home</h3><br>
+
+                        <h4>Text Box</h4>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="add_username" placeholder="Enter Data"
+                                style="width: 500px;">
+                        </div>
+                        <br>
+                        <h4>Button</h4>
+                        <div class="form-group">
+                            <input type="submit" name="add_new_user" value="Submit Button" class="btn btn-danger"
+                                style="height: 40px; width:300px;">
+                        </div>
+                        <br>
+                        <h4>DropDown Menu (Select Box)</h4>
+                        <div class="form-group">
+                            <select name="subject" class="form-control" id="sel1" style="width: 300px;">
+                                <option value="SelectVal">Select Gender from Dropdown List</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+
+                            </select>
+                        </div>
+                        <br>
+                        <h4>Browse File Option</h4>
+                        <input type="file">
+                        <br>
+                        <h4>Table to Display Data</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Header 1</th>
+                                    <th>Header 2</th>
+                                    <th>Header 3</th>
+                                    <th>Header 4</th>
+                                    <th>Header 5</th>
+                                    <th>Header 6</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Value 1</td>
+                                    <td>Value 2</td>
+                                    <td>Value 3</td>
+                                    <td>Value 4</td>
+                                    <td>Value 5</td>
+                                    <td>Value 6</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+
+                    <div id="projects" class="tab-pane fade">
+                        <h3>Projects</h3>
+                    </div>
+
+
+                    <div id="modules" class="tab-pane fade">
+                        <h3>Modules</h3>
+                    </div>
+
+
+                    <div id="api" class="tab-pane fade">
+                        <h3>API</h3>
+                    </div>
+
+
+                    <div id="user" class="tab-pane fade">
+                        <h3>Users</h3>
+                    </div>
+
+
+                    <div id="userAddress" class="tab-pane fade">
+                        <h3>User Address</h3>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
