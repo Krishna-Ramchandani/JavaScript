@@ -297,3 +297,37 @@ select mo.module_title,pr.project_title from modules mo
 inner join projects pr on mo.project_id=pr.project_id
 group by mo.module_title,pr.project_title 
 order by project_title;
+
+
+
+
+-----Updated Queries :-
+
+
+--Query to get list of API for specific module
+select ap.api_id,ap.api_title,ap.api_url,ap.api_method,
+ap.api_request,ap.api_response,mo.module_title from apis ap
+inner join modules mo on mo.module_id=ap.module_id
+where mo.module_title = 'Hash Function';
+
+
+----Query to get  list of module for specific project
+select mo.module_title,mo.module_description,pr.project_title 
+from modules mo inner join projects pr 
+on mo.project_id=pr.project_id
+where pr.project_title='Security';
+
+
+--Query to get user list who have same country/city
+select u1.user_first_name,u1.user_last_name,u1.user_email,
+ud.user_city,ud.user_country from users u1 inner join
+user_address ud on u1.user_id=ud.user_id
+where ud.user_country='India';
+
+
+----Query to get list of project assigned to particular user
+select pr.project_title,pr.project_description,us.user_first_name,us.user_last_name
+from projects pr join project_users pu on pr.project_id=pu.project_id 
+join users us on us.user_id=pu.user_id 
+where us.user_first_name ='Veer';
+
