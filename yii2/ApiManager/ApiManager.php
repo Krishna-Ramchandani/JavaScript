@@ -3,6 +3,7 @@ namespace app\ApiManager;
 
 use app\models\Api;
 use app\ApiManager\ApiInterface;
+use app\models\SearchApi;
 use Yii;
 use yii\web\NotFoundHttpException;
 
@@ -50,7 +51,14 @@ class ApiManager implements ApiInterface{
 
     public function index()
     {
-        
+        $request=Yii::$app->request;
+        $searchModel = new SearchApi();
+        $dataProvider = $searchModel->search($request->post());
+
+        return $array =  [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ];
     }
     protected function findModel($id)
     {
