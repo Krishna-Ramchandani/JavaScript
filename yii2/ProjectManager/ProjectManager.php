@@ -1,6 +1,7 @@
 <?php
 namespace app\ProjectManager;
 use app\models\Project;
+use app\models\SearchProject;
 use app\ProjectManager\ProjectInterface;
 use Yii;
 use yii\web\NotFoundHttpException;
@@ -40,7 +41,17 @@ class ProjectManager implements ProjectInterface{
          }
         return false;}
 
-    public function index(){}
+    public function index(){
+
+        $request=Yii::$app->request;
+        $searchModel = new SearchProject();
+        $dataProvider = $searchModel->search($request->post());
+
+        return $array =  [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ];
+    }
 
 
     protected function findModel($id)
