@@ -1,5 +1,7 @@
 <?php
 namespace app\UserAddressManager;
+
+use app\models\SearchUserAddress;
 use app\models\UserAddress;
 use app\UserAddressManager\UserAddressInterface;
 use Yii;
@@ -48,7 +50,14 @@ class UserAddressManager implements UserAddressInterface{
 
     public function index()
     {
-        
+        $request=Yii::$app->request;
+        $searchModel = new SearchUserAddress();
+        $dataProvider = $searchModel->search($request->post());
+
+        return $array =  [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ];
     }
 
 
