@@ -1,5 +1,7 @@
 <?php
 namespace app\UsersManager;
+
+use app\models\SearchUsers;
 use app\models\Users;
 use app\UsersManager\UsersInterface;
 use Yii;
@@ -83,7 +85,14 @@ class UsersManager implements UsersInterface{
 
     public function index()
     {
-        
+        $request=Yii::$app->request;
+        $searchModel = new SearchUsers();
+        $dataProvider = $searchModel->search($request->post());
+
+        return $array =  [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ];
     }
 
 
