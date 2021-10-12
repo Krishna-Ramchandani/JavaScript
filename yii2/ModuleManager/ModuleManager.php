@@ -2,6 +2,7 @@
 namespace app\ModuleManager;
 
 use app\models\Module;
+use app\models\SearchModule;
 use app\ModuleManager\ModuleInterface;
 use Yii;
 use yii\web\NotFoundHttpException;
@@ -49,7 +50,14 @@ class ModuleManager implements ModuleInterface{
 
     public function index()
     {
-        
+        $request=Yii::$app->request;
+        $searchModel = new SearchModule();
+        $dataProvider = $searchModel->search($request->post());
+
+        return $array =  [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ];
     }
 
     protected function findModel($id)
