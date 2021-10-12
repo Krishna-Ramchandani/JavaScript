@@ -49,13 +49,15 @@ class ModuleController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SearchModule();
-        $dataProvider = $searchModel->search($this->request->post());
+        $model=$this->finder->index();
+        return $this->render('index',$model);
+        // / $searchModel = new SearchModule();
+        // $dataProvider = $searchModel->search($this->request->post());
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        // ]);
     }
 
     /**

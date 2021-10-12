@@ -47,13 +47,15 @@ class UsersController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SearchUsers();
-        $dataProvider = $searchModel->search($this->request->post());
+        $model=$this->finder->index();
+        return $this->render('index',$model);
+        // $searchModel = new SearchUsers();
+        // $dataProvider = $searchModel->search($this->request->post());
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        // ]);
     }
 
     /**
@@ -147,7 +149,7 @@ class UsersController extends Controller
 
         // return $this->redirect(['index']);
 
-        $this->finder->delete($id);
+         $this->finder->delete($id);
         return $this->redirect(['index']);
 
     }

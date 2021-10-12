@@ -49,13 +49,15 @@ class ProjectController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SearchProject();
-        $dataProvider = $searchModel->search($this->request->post());
+        $model=$this->finder->index();
+        return $this->render('index',$model);
+        // $searchModel = new SearchProject();
+        // $dataProvider = $searchModel->search($this->request->post());
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        // ]);
     }
 
     /**
@@ -152,9 +154,9 @@ class ProjectController extends Controller
 
         // return $this->redirect(['index']);
 
-        
-        $this->finder->delete($id);
+         $this->finder->delete($id);
         return $this->redirect(['index']);
+
     }
 
     /**

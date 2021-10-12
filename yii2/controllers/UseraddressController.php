@@ -48,13 +48,16 @@ class UseraddressController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SearchUserAddress();
-        $dataProvider = $searchModel->search($this->request->post());
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        $model=$this->finder->index();
+        return $this->render('index',$model);
+        // $searchModel = new SearchUserAddress();
+        // $dataProvider = $searchModel->search($this->request->post());
+
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        // ]);
     }
 
     /**
