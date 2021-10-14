@@ -1,13 +1,14 @@
 <?php
 namespace app\UsersManager;
 
+use app\common\CommonInterface;
 use app\models\SearchUsers;
 use app\models\Users;
-use app\UsersManager\UsersInterface;
+// use app\UsersManager\UsersInterface;
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class UsersManager implements UsersInterface{
+class UsersManager implements CommonInterface{
 
     public function create()
     {
