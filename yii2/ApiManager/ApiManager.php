@@ -2,12 +2,13 @@
 namespace app\ApiManager;
 
 use app\models\Api;
-use app\ApiManager\ApiInterface;
+// use app\ApiManager\ApiInterface;
+use app\common\CommonInterface;
 use app\models\SearchApi;
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class ApiManager implements ApiInterface{
+class ApiManager implements CommonInterface{
 
     public function create()
     {
