@@ -1,12 +1,14 @@
 <?php
 namespace app\ProjectManager;
+
+use app\common\CommonInterface;
 use app\models\Project;
 use app\models\SearchProject;
-use app\ProjectManager\ProjectInterface;
+// use app\ProjectManager\ProjectInterface;
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class ProjectManager implements ProjectInterface{
+class ProjectManager implements CommonInterface{
 
     public function create()
     {
