@@ -1,13 +1,14 @@
 <?php
 namespace app\ModuleManager;
 
+use app\common\CommonInterface;
 use app\models\Module;
 use app\models\SearchModule;
-use app\ModuleManager\ModuleInterface;
+// use app\ModuleManager\ModuleInterface;
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class ModuleManager implements ModuleInterface{
+class ModuleManager implements CommonInterface{
 
     public function create()
     {
