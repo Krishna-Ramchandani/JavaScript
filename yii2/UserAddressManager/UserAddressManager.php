@@ -1,13 +1,14 @@
 <?php
 namespace app\UserAddressManager;
 
+use app\common\CommonInterface;
 use app\models\SearchUserAddress;
 use app\models\UserAddress;
-use app\UserAddressManager\UserAddressInterface;
+// use app\UserAddressManager\UserAddressInterface;
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class UserAddressManager implements UserAddressInterface{
+class UserAddressManager implements CommonInterface{
 
     public function create()
     {
