@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-
+use app\common\CommonInterface;
 use app\models\Module;
 use app\models\SearchModule;
 use app\ModuleManager\ModuleInterface;
@@ -18,7 +18,7 @@ class ModuleController extends Controller
 {
 
     public $finder;
-    public function __construct($id, $module, ModuleInterface $finder, $config=[])
+    public function __construct($id, $module, CommonInterface $finder, $config=[])
     {
         $this->finder = $finder;
         parent::__construct($id, $module, $config);       
@@ -170,4 +170,4 @@ class ModuleController extends Controller
 }
 
 
-Yii::$container->set('app\ModuleManager\ModuleInterface','app\ModuleManager\ModuleManager');
+Yii::$container->set('app\common\CommonInterface','app\ModuleManager\ModuleManager');

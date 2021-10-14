@@ -2,9 +2,10 @@
 
 namespace app\controllers;
 
+use app\common\CommonInterface;
 use app\models\UserAddress;
 use app\models\SearchUserAddress;
-use app\UserAddressManager\UserAddressInterface;
+// use app\UserAddressManager\UserAddressInterface;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,7 +21,7 @@ class UseraddressController extends Controller
      */
 
     public $finder;
-    public function __construct($id, $module, UserAddressInterface $finder, $config=[])
+    public function __construct($id, $module, CommonInterface $finder, $config=[])
     {
         $this->finder = $finder;
         parent::__construct($id, $module, $config);       
@@ -179,4 +180,4 @@ class UseraddressController extends Controller
     // }
 }
 
-Yii::$container->set('app\UserAddressManager\UserAddressInterface','app\UserAddressManager\UserAddressManager');
+Yii::$container->set('app\common\CommonInterface','app\UserAddressManager\UserAddressManager');

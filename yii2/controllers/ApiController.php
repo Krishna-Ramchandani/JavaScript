@@ -2,7 +2,8 @@
 
 namespace app\controllers;
 
-use app\ApiManager\ApiInterface;
+// use app\ApiManager\ApiInterface;
+use app\common\CommonInterface;
 use app\models\Api;
 use app\models\SearchApi;
 use Yii;
@@ -17,7 +18,7 @@ class ApiController extends Controller
 {
 
     public $finder;
-    public function __construct($id, $module, ApiInterface $finder, $config=[])
+    public function __construct($id, $module, CommonInterface $finder, $config=[])
     {
         $this->finder = $finder;
         parent::__construct($id, $module, $config);       
@@ -169,4 +170,4 @@ class ApiController extends Controller
    
 }
 
-Yii::$container->set('app\ApiManager\ApiInterface','app\ApiManager\ApiManager');
+Yii::$container->set('app\common\CommonInterface','app\ApiManager\ApiManager');

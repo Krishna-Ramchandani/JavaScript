@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\common\CommonInterface;
 use app\models\Users;
 use app\models\SearchUsers;
 use app\UsersManager\UsersInterface;
@@ -19,7 +20,7 @@ class UsersController extends Controller
      */
 
     public $finder;
-    public function __construct($id, $module, UsersInterface $finder, $config=[])
+    public function __construct($id, $module, CommonInterface $finder, $config=[])
     {
         $this->finder = $finder;
         parent::__construct($id, $module, $config);       
@@ -174,4 +175,4 @@ class UsersController extends Controller
     // }
 }
 
-Yii::$container->set('app\UsersManager\UsersInterface','app\UsersManager\UsersManager');
+Yii::$container->set('app\common\CommonInterface','app\UsersManager\UsersManager');

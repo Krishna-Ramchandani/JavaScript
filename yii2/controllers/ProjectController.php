@@ -2,13 +2,14 @@
 
 namespace app\controllers;
 
+use app\common\CommonInterface;
 use app\models\Project;
 use app\models\SearchProject;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-use app\ProjectManager\ProjectInterface;
+// use app\ProjectManager\ProjectInterface;
 use yii\di\Container;
 use Yii;
 
@@ -19,7 +20,7 @@ class ProjectController extends Controller
 {
 
     public $finder;
-    public function __construct($id, $module, ProjectInterface $finder, $config=[])
+    public function __construct($id, $module, CommonInterface $finder, $config=[])
     {
         $this->finder = $finder;
         parent::__construct($id, $module, $config);       
@@ -169,4 +170,4 @@ class ProjectController extends Controller
    
 }
 
-Yii::$container->set('app\ProjectManager\ProjectInterface','app\ProjectManager\ProjectManager');
+Yii::$container->set('app\common\CommonInterface','app\ProjectManager\ProjectManager');
